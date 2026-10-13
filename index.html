@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liew Wei Wei | MyBio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="desk">
+    <div class="folder">
+
+      <!-- ===== Folder tabs (click to switch page) ===== -->
+      <nav class="tabs" role="tablist">
+        <button class="tab tab-cover active" data-target="cover" role="tab" aria-selected="true">Cover</button>
+        <button class="tab tab-about" data-target="about" role="tab" aria-selected="false">About Me</button>
+        <button class="tab tab-projects" data-target="projects" role="tab" aria-selected="false">Projects</button>
+      </nav>
+
+      <!-- ================= PAGE 1: COVER ================= -->
+      <section id="cover" class="sheet sheet-cover active" role="tabpanel">
+
+        <!-- Paperclip -->
+        <svg class="paperclip" viewBox="0 0 40 130" aria-hidden="true">
+          <path d="M28 40 V108 a10 10 0 0 1 -20 0 V22 a14 14 0 0 1 28 0 V98"
+                fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+
+        <div class="cover-content">
+          <!-- Top right: name + role -->
+          <div class="cover-top">
+            <h1 class="cover-name">Liew Wei Wei</h1>
+            <p class="cover-role">Software Engineering Student</p>
+          </div>
+
+          <!-- Bottom left: My - BIO on one line -->
+          <div class="cover-bottom">
+            <p class="cover-title"><span class="cover-script">My -</span>BIO</p>
+            <button class="open-btn" data-goto="about">Open folder →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 2: ABOUT ME ================= -->
+      <section id="about" class="sheet sheet-about" role="tabpanel">
+        <div class="about-grid">
+
+          <!-- Left: profile + contact -->
+          <aside class="paper profile">
+            <div class="avatar-wrap">
+              <!-- Profile photo (photo.webp in this folder) -->
+              <img src="photo.webp" alt="Liew Wei Wei" class="avatar"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">LW</div>
+            </div>
+            <h2 class="profile-name">Liew Wei Wei</h2>
+            <p class="profile-role">Software Engineering Student</p>
+
+            <ul class="contact">
+              <li><span class="label">Phone</span><a href="https://wa.me/60163628053" target="_blank" rel="noopener">016-362 8053 (WhatsApp)</a></li>
+              <li><span class="label">Address</span><span>Penampang, Sabah</span></li>
+              <li><span class="label">Email</span><a href="mailto:liewweiwei0629@gmail.com">liewweiwei0629@gmail.com</a></li>
+              <li><span class="label">GitHub</span><a href="https://github.com/WeiWei992" target="_blank" rel="noopener">github.com/WeiWei992</a></li>
+              <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/wei-wei-liew-166bb12ab/" target="_blank" rel="noopener">linkedin.com/in/wei-wei-liew-166bb12ab</a></li>
+              <!-- RESUME (hidden for now): put resume.pdf in this folder, then delete this comment's start and end markers to show the line below
+              <li><span class="label">Resume</span><a href="resume.pdf" download="Liew_Wei_Wei_Resume.pdf">Download resume (PDF) ↓</a></li>
+              -->
+            </ul>
+          </aside>
+
+          <!-- Right: details -->
+          <div class="details">
+            <div class="paper">
+              <h3>Who I Am</h3>
+              <p>
+                Hi! I'm Wei Wei, a Software Engineering student from Malaysia who enjoys
+                building mobile apps and websites. I like turning everyday problems
+                into simple, and useful tools.
+              </p>
+            </div>
+
+            <div class="paper stack">
+              <div class="stack-head">
+                <h3>My Tech Stack</h3>
+                <p>Technical tools which bring my ideas to life.</p>
+              </div>
+              <!-- Rows are created from the techStack list in script.js -->
+              <div id="stack-list"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PAGE 3: PROJECTS ================= -->
+      <section id="projects" class="sheet sheet-projects" role="tabpanel">
+        <div class="projects-head">
+          <h2>Projects</h2>
+          <p>Tap a folder to open it</p>
+        </div>
+        <div class="dot-paper">
+          <!-- Folders are created from the list in script.js -->
+          <div id="project-grid" class="project-grid"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== Project popup ===== -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-strip"></div>
+      <div class="modal-body">
+        <h3 id="modal-title"></h3>
+        <p class="modal-meta" id="modal-meta"></p>
+        <p id="modal-desc"></p>
+        <div class="chips" id="modal-tech"></div>
+        <a id="modal-link" class="modal-link" target="_blank" rel="noopener">View project →</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
